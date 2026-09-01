@@ -66,6 +66,14 @@ describe("scheduling", () => {
     expect(result.executed.sort()).toEqual(["a", "b"]);
   });
 
+  test("readyTasks exposes only unblocked pending tasks", () => {
+    const engine = new OrchestrationEngine([
+      { name: "first", capability: "x" },
+      { name: "second", capability: "x", dependsOn: ["first"] },
+    ]);
+    expect(engine.readyTasks()).toEqual(["first"]);
+  });
+
   test("worker failure fails the workflow with the error message", async () => {
     const engine = new OrchestrationEngine([
       { name: "boom", capability: "x" },

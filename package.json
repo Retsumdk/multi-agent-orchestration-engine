@@ -1,14 +1,37 @@
 {
   "name": "multi-agent-orchestration-engine",
-  "description": "Orchestration engine for complex multi-agent workflows with dynamic task allocation and dependency management",
-  "version": "1.0.0",
+  "description": "DAG scheduler that allocates multi-agent workflow tasks across capability-matched workers with dependency management and failure propagation",
+  "version": "1.1.0",
+  "license": "MIT",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "keywords": [
+    "ai",
+    "agents",
+    "orchestration",
+    "dag",
+    "scheduler",
+    "typescript",
+    "multi-agent",
+    "workflow"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "bun test",
-    "build": "tsc"
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
   },
-  "dependencies": {
-    "commander": "^11.1.0"
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Retsumdk/multi-agent-orchestration-engine.git"
   },
   "devDependencies": {
     "bun-types": "^1.0.0",
