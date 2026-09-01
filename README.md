@@ -126,7 +126,7 @@ agent; whatever it returns becomes `task.output`. Resolves with:
 | `executed` | Completed task names in execution order |
 | `tasks` | Map of task name → `{ status, assignedTo?, output?, error? }` |
 
-### `engine.stateOf(name)` / `engine.statusOf(name)`
+### `engine.stateFor(name)` / `engine.statusOf(name)`
 
 Inspect a single task's current state or status.
 
